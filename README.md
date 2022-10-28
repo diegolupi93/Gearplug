@@ -37,6 +37,6 @@ To run the code :
 
 ### API Modelling
 
-<img src="imagen.png" alt="MarineGEO circle logo" style="height: 400px; width:500px;"/>
+<img src="imagen.png" alt="MarineGEO circle logo" style="height: 300px; width:500px;"/>
 
 ### Endpoints

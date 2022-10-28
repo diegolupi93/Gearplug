@@ -28,7 +28,7 @@ To run the code:
 ### Test Manually
 To Test the app Run the code after that go to **localhost:8000/starwars/** and try, for example:
 
-[http://127.0.0.1:8000/starwars/character](http://127.0.0.1:8000/starwars/character)
+[http://127.0.0.1:8000/starwars/character/](http://127.0.0.1:8000/starwars/character/)
 
 ### Run the test
 To run the code :

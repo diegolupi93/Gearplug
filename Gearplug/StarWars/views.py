@@ -1,42 +1,44 @@
+from enum import Flag
 from urllib import response
-import django_filters.rest_framework
+from rest_framework import filters
+from django_filters.rest_framework import DjangoFilterBackend
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import viewsets
 from .models import Character, Movie, Planet
 from .serializers import CharacterSerializer, MovieSerializer, PlanetSerializer
-from rest_framework.decorators import api_view
 from rest_framework import generics
+from rest_framework import status
+from rest_framework.exceptions import PermissionDenied
+from rest_framework import permissions
+
+
+class CharacterCreated(permissions.BasePermission):
+    def has_object_permission(self, request, view, obj):
+        exist_character = Character.objects.filter(**request.data).exists()
+        if exist_character:
+            return False
+        #import ipdb
+        #ipdb.set_trace()
+        return True
 
 # Hacer una viewset de character
-class CharacterViewSet(viewsets.ViewSet):
+class CharacterViewSet(viewsets.ModelViewSet):
     """
-    Coment
+    List and Post Characters.
     """
-    def list(self, request):
-        queryset = Character.objects.all()
-        serializer = CharacterSerializer(queryset, many=True)
-        filterset_fields = ['name']
-        return Response(serializer.data)
-    
-    def create(self, request):
-        serializer = CharacterSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data)
-
-
-class CharacterList(generics.ListAPIView):
+    permission_classes = [CharacterCreated]
     queryset = Character.objects.all()
     serializer_class = CharacterSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_fields = ['name']
 
-class CharacterCreate(generics.CreateAPIView):
-    serializer_class = CharacterSerializer
 
 class MovieCreate(generics.CreateAPIView):
+    """Post Movies"""
     serializer_class = MovieSerializer
 
 class PlanetCreate(generics.CreateAPIView):
+    """Post Planets"""
     serializer_class = PlanetSerializer
 

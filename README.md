@@ -40,3 +40,23 @@ To run the code :
 <img src="imagen.png" alt="MarineGEO circle logo" style="height: 300px; width:500px;"/>
 
 ### Endpoints
+
+There are three endpoints:
+
+The one of these is:
+
+[http://127.0.0.1:8000/starwars/character/](http://127.0.0.1:8000/starwars/character/)
+
+This endpoint is the resposible for list the characters and create de new characters.
+
+The another one is:
+
+[http://127.0.0.1:8000/starwars/planet/](http://127.0.0.1:8000/starwars/planet/)
+
+This endpoint is the resposible for create de new planet.
+
+The last one is:
+
+[http://127.0.0.1:8000/starwars/movie/](http://127.0.0.1:8000/starwars/movie/)
+
+This endpoint is the resposible for create de new planet.

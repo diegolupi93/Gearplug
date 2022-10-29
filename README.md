@@ -12,7 +12,7 @@ Open the terminal and in the Gearplug folder run:
 
 ### Set Up
 
-On the terminal in the StarWars folder run the next commands to set up the environment for work:
+On the terminal in the Gearplug folder run the next commands to set up the environment for work:
 
 > $ python manage.py makemigrations
 

@@ -37,6 +37,9 @@ To run the code :
 
 ### API Modelling
 
+The image below represents the relation between models (models with its arguments). All the relationships are 
+many to many.
+
 <img src="imagen.png" alt="MarineGEO circle logo" style="height: 300px; width:500px;"/>
 
 ### Endpoints

@@ -1,11 +1,9 @@
-from urllib import request
 from django.test import TestCase
-from rest_framework.test import APIClient
 from rest_framework.test import APIRequestFactory
 from django.urls import reverse
-from .models import Character, Movie, Planet
-from .serializers import CharacterSerializer, MovieSerializer, PlanetSerializer
-import json
+from .models import Character
+from .serializers import CharacterSerializer
+
 from rest_framework import status
 from rest_framework.test import force_authenticate
 from .views import CharacterViewSet, PlanetCreate, MovieCreate
